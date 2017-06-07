@@ -9,3 +9,12 @@ It changes the label of install button on userscript sites according to version 
 
 Supported sites:
 - <https://greasyfork.org>
+
+### Snapshots
+- before using this script:
+
+  ![before](https://user-images.githubusercontent.com/3139113/26868463-b051bf64-4b9b-11e7-94d7-6313be7ec259.png)
+
+- after using this script:
+
+  ![after](https://user-images.githubusercontent.com/3139113/26868474-b8655080-4b9b-11e7-9042-eb6561c57425.png)
