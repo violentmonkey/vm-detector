@@ -1,7 +1,9 @@
 // ==UserScript==
 // @name VM detector
+// @name:zh-CN 暴力猴嗅探器
 // @namespace https://violentmonkey.github.io
-// @description Detector for scripts on Violentmonkey.
+// @description Detector installation status for scripts on Violentmonkey.
+// @description:zh-CN 检测脚本在暴力猴上的安装状态。
 // @version 1.0
 // @author Gerald <i@gerald.top>
 // @match https://greasyfork.org/*
