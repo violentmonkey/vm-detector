@@ -1,27 +1,21 @@
 // ==UserScript==
 // @name VM detector
+// @name:en VM detector
 // @name:zh-CN 暴力猴嗅探器
 // @namespace https://violentmonkey.github.io
 // @description Detector installation status for scripts on Violentmonkey.
+// @description:en Detector installation status for scripts on Violentmonkey.
 // @description:zh-CN 检测脚本在暴力猴上的安装状态。
-// @version 1.0
+// @version 1.0.1
 // @author Gerald <i@gerald.top>
 // @match https://greasyfork.org/*
 // @grant none
 // ==/UserScript==
 
-!function () {
-  const warn = message => {
-    console.warn('[VM detector]', message);
-  };
-  if (GM_info.scriptHandler !== 'Violentmonkey') {
-    warn('This script only works for Violentmonkey.');
-    return;
-  }
-  if (!external.Violentmonkey) {
-    warn('This script requires Violentmonkey 2.6.4+.');
-    return;
-  }
+initialize();
+
+function initialize() {
+  if (!check()) return;
 
   const $ = selector => document.querySelector(selector);
   const button = $('.install-link');
@@ -43,7 +37,22 @@
       }
     }
   });
-}();
+}
+
+function check() {
+  const warn = message => {
+    console.warn('[VM detector]', message);
+  };
+  if (GM_info.scriptHandler !== 'Violentmonkey') {
+    warn('This script only works for Violentmonkey.');
+    return false;
+  }
+  if (!external.Violentmonkey) {
+    warn('This script requires Violentmonkey 2.6.4+.');
+    return false;
+  }
+  return true;
+}
 
 function compareVersions(a, b) {
   const va = a.split('.').map(i => +i);
