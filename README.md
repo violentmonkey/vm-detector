@@ -1,7 +1,7 @@
 VM detector
 ---
 
-Detector installation status for scripts on Violentmonkey.
+Detect installation status for scripts on Violentmonkey.
 
 This is a userscript to work with Violentmonkey 2.6.4+.
 
